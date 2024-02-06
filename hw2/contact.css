@@ -78,6 +78,7 @@ body {
 
 .navbar__item {
     height: 20vh;
+    font-size: 1.2rem;
 }
 
 .navbar__link {
@@ -272,4 +273,3 @@ body {
     transform: scale(1.5);
     width: auto;
 }
-
