@@ -14,7 +14,7 @@ body {
 
 .navbar {
     background: #EDEDE8;   
-    height: 80px;
+    height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,10 +28,9 @@ body {
 .navbar__container {
     display: flex;
     justify-content: space-between;
-    height: 80px;
+    height: 10vh;
     z-index: 1;
     width: 100%;
-    max-width: 1300px; 
     margin: 0 auto;
     padding: 0 auto;
 } 
@@ -45,7 +44,7 @@ body {
     align-items: center;
     cursor: pointer;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1.2rem;
     padding-left: 25px;
     color: transparent;
     -webkit-background-clip: text;
@@ -78,7 +77,7 @@ body {
 }
 
 .navbar__item {
-    height: 80px;
+    height: 20vh;
 }
 
 .navbar__link {
@@ -120,7 +119,7 @@ body {
     background-color: #EDEDE8; 
     color: #363636; 
     padding: 20px 20px; 
-    font-size: 24px; 
+    font-size: 2em; 
     border-radius: 5px; 
     border: 2px solid #363636; 
     transition: background-color 0.3s ease;
@@ -218,29 +217,10 @@ body {
     margin: 30px;
 }
 
-/* Hover effect */
 .explore button:hover {
     background-color: #7A7A7A; 
 }
 
-
-.overlay {
-    
-    background-color: rgba(25, 25, 22, 0.5);
-    border-radius: 5px;
-    position: absolute;
-    top: 50%;
-    left: 25%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #EDEDE8; 
-    padding: 100px;
-}
-
-.overlay h1 { 
-    /* maybe later turn into the cooler staggered version */
-    font-size: 3rem;
-}
 
 .theform h1 {
     margin-top: 5px;
