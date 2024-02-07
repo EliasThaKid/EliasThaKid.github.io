@@ -11,7 +11,31 @@
 
 
     <style>
+        #exh {
+            border-top: none;
+        }
 
+
+        @media (max-width: 900px) { 
+
+            #explore1 img {
+                display: none;
+            }
+            #explore1 div {
+                display: block;
+                margin: 20px;
+                padding: 20px;
+                text-align: center;
+            }
+            #mob {
+                display: block !important;
+                width: 40%;
+            }
+
+            #des {
+                display: none;
+            }
+         }
     </style>
 
 </head>
@@ -60,7 +84,7 @@
     </nav>
 
 
-    <div class = "aboutus"> 
+    <div class = "aboutus" id="exh"> 
 
         <div class="heading">
             <h1>
@@ -68,11 +92,11 @@
             </h1>
         </div>
 
-        <div class = "explore">
+        <div class = "explore" id="explore1">
 
             <img src="images/eyeside.jpg" />
 
-            <div>
+            <div class="expdescript">
                 <h2> THIS WEEK: The eyes that watch us </h2>
                 <p> We are currently displaying Mr. Sugarbottom's work, 
                     about a bunch of eyeballs and stuff, its really quirky
@@ -82,6 +106,21 @@
 
             
         </div>
+
+        <div class="heading">
+            <h1>
+                PAST EXHIBITS
+            </h1>
+        </div>
+
+        <div class = "explore">
+
+            <img src="images/eyeban.jpg" style="width: 80%;" id="des"/>
+            <img src="images/eyemobile.jpg" style="display: none;" id="mob"/>
+
+            
+        </div>
+
 
         <div class="heading">
 
