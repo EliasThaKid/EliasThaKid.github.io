@@ -31,7 +31,6 @@ body {
     height: 10vh;
     z-index: 1;
     width: 100%;
-    max-width: 1300px;
     margin: 0 auto;
     padding: 0 auto;
 } 
@@ -198,7 +197,7 @@ body {
     font-size: 1.2rem; 
     height: 30vh;
     width: 100%;
-    max-width: 1300px;
+    /* max-width: 1300px;  */
     border-top: 3px solid #0e0d0d;
 }
 
@@ -207,7 +206,7 @@ body {
     display: flex;
     justify-content: center;
     z-index: 100;
-    margin: 100px;
+    margin: 50px;
     padding: 0 auto;
 
 } 
