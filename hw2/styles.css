@@ -37,18 +37,13 @@ body {
 } 
 
 #navbar-logo {
-    background-color: #EDEDE8;  
-    background-image: linear-gradient(to top, #363636 90%, #EDEDE8 10%);
-    background-size: 100%;
+    color: #363636;  
     display: flex;
     align-items: center;
     cursor: pointer;
     text-decoration: none;
     font-size: 1.3em;
     padding-left: 25px;
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
 }  
 
 #navbar-logo:hover {
@@ -124,7 +119,6 @@ body {
 }
 
 .overlay h1 { 
-    /* maybe later turn into the cooler staggered version */
     font-size: 3rem;
 }
 
@@ -218,19 +212,14 @@ body {
 } 
 
 #footer-logo {
-    background-color: #EDEDE8;  
-    background-image: linear-gradient(to top, #EDEDE8 90%, #363636 10%);
-    background-size: 100%;
     display: flex;
+    color: #EDEDE8;
     align-items: center;
-    justify-content: center;
+    justify-content: center; 
     cursor: pointer;
     text-decoration: none;
     font-size: 1.3em;
     padding-left: 25px;
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
     margin-top: 10px;
 }  
 
