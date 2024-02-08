@@ -10,15 +10,23 @@
     <meta name=‘viewport’ content=“width=device-width, initial-scale=1”>
 
     <style>
+
+            #vis {
+                font-size: 2.9em;
+            }
+
         @media (max-width: 900px) { 
+
             #explore1 img {
                 display: none;
             }
+
             #explore1 p {
                 margin: 5px;
                 width: 60vw;
             }
-         }
+
+        }
 
     </style>
 
@@ -32,31 +40,26 @@
 
             <a href="/hw2/index.html" id="navbar__logo"> BLND VZN </a>
 
-            <div class="navbar__toggle" id="mobile-menu">
-
-                <span class="bar"></span> <span class="bar"></span>
-                <span class="bar"></span>
-
-            </div>
 
             <ul class="navbar__menu">
 
                 <li class="navbar__item">
 
-                    <a href="/hw2/index.html" class="navbar__link" id="hom"> 
+                    <a href="/hw2/index.html" class="navbar__link"> 
                         OUR GALLERY </a> 
 
                 </li>
+
                 <li class="navbar__item">
 
-                    <a href="/hw2/contact.html" class="navbar__link" id="cnt"> 
+                    <a href="/hw2/contact.html" class="navbar__link"> 
                         CONTACT US </a> 
 
                 </li>
 
                 <li class="navbar__item">
 
-                    <a href="/hw2/exhibits.html" class="navbar__link" id="exh"> 
+                    <a href="/hw2/exhibits.html" class="navbar__link"> 
                         THE EXHIBITS </a>
 
                 </li>
@@ -70,9 +73,11 @@
     <div class="background">
 
         <div class="overlay"> 
+
             <h1>
                 OUR GALLERY
             </h1> 
+
         </div>
 
         <img src="images/gallery.jpg" class="background__image" />
@@ -82,9 +87,11 @@
     <div class = "aboutus"> 
 
         <div class="heading">
-            <h1>
+
+            <h2 id="vis">
                 Share Your VISION With Us
-            </h1>
+            </h2>
+
         </div>
 
         <div class = "explore" id="explore1">
@@ -120,8 +127,6 @@
         </div>
 
      </div>
-
-    
 
 </body>
 
