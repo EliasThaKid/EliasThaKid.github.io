@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<head>
+
+
+    <title> Tic Tac Toe! </title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans';
+
+        }
+
+        body {
+            background-color: #363636;
+        }
+
+        .ttt {
+            background-color: #363636;
+            display: flex;
+            justify-content: center; 
+            flex-wrap: wrap;
+            height: 110vh;
+            width: 100%;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .ttt-container {
+            background-color: #EDEDE8;
+            border: 7px solid #1a1919;
+            border-radius: 20px;
+            padding: 20px;
+            height: 720px;
+            width: 636px;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); 
+        }
+
+        .ttt-grid {
+            height: 455px;
+            width: 455px;
+            margin: 30px auto;
+            background-color: #363636;
+            border: 4px solid #1a1919;
+            border-radius: 7px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+        }
+
+        .square {
+                
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            background-color: #B7C9E2;
+            border: 7px solid #B7C9E2;
+            border-radius: 10px;
+            height: 125px;
+            width: 125px;
+            font-size: 4em;
+                
+        }
+
+        .square:hover {
+            transition: all 0.3s ease;;
+            background-color: #7e8fa7;
+            border: 7px solid #7e8fa7;
+        }
+
+        .head-container {
+            border: 4px solid #1a1919;
+            padding: 2px auto;
+            border-radius: 7px;
+            background-color: #B7C9E2;
+            height: 85px;
+            width: 300px;
+            margin: 0 auto;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .head-container span {
+            color: #752919;
+        }
+
+        .play-again {
+            background-color: #B7C9E2; 
+            color: #363636; 
+            padding: 20px 20px; 
+            font-size: 24px; 
+            border-radius: 5px; 
+            border: 2px solid #363636; 
+            transition: background-color 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            color: #1a1919;
+        }
+
+
+        .play-again:hover {
+            background-color: #7e8fa7; 
+        }
+
+        .win-condition {
+            height: 455px;
+            width: 455px;
+            z-index: 999;
+            color: #EDEDE8;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4em;
+            position: absolute;
+            top: 20%;
+            right: 34%;
+            border: 8px solid #1a1919;
+            border-radius: 10px;
+        }
+
+
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="ttt">
+       
+
+        <div class="ttt-container">
+            
+            <div class="head-container">
+                <h1> Tic Tac Toe! </h1>
+
+                <div id="turn-display"> <h2> Its Player X Turn </h2> </div>
+            </div>
+            
+            <div class="ttt-grid">
+                
+            </div>
+
+            <div class="play-again-container">
+                <button class="play-again">
+                    Play Again?
+                </button>
+           
+            
+        </div>
+
+       
+        <div class="win-condition"> PLAYER X WON!!! </div>
+
+    </div>
+
+    <script>
+  
+
+        const NUM_SQUARES = 9;
+        const squares = document.getElementsByClassName("square");
+        const tttGrid = document.querySelector('.ttt-grid');
+        const turnDisplay = document.getElementById('turn-display');
+        const playButton = document.querySelector('.play-again');
+        
+        playerXTurn = pickPlayer();
+        updateTurnHead(playerXTurn);
+
+        filledSquares = ["","","","","","","","",""];
+
+
+        document.querySelector('.win-condition').style.display = 'none';
+
+
+        let squaresHTML = ''; 
+
+        for (let i = 0; i < NUM_SQUARES; i++) {
+
+            const id = "sq" + i;
+
+            squaresHTML += "<div class='square' id='" + id + "'></div>"; 
+
+        }
+
+        tttGrid.innerHTML = squaresHTML;
+
+        for (let i = 0; i < squares.length; i++) {
+            squares[i].addEventListener('click', clickSquare);
+        }
+
+        playButton.addEventListener('click', resetGame);
+
+        function clickSquare(event) {
+
+            squareIndex = parseInt(event.target.id.slice(2));
+
+            if (filledSquares[squareIndex] == "") {
+                
+                square = event.target;
+
+                if (playerXTurn) {
+                    square.innerHTML = 'X';
+                } else {
+                    square.innerHTML = 'O';
+                }
+
+                playerXTurn = !playerXTurn
+                filledSquares[squareIndex] = "filled";
+                    
+                alert("square " + event.target.id + " was clicked.");
+
+                updateTurnHead(playerXTurn);
+            }
+
+        }
+
+        function updateTurnHead(playerXTurn) {
+
+            if (playerXTurn) {
+                turnDisplay.innerHTML = '<h2> It\'s <span> Player X </span> Turn! </h2>';
+            } else {
+                turnDisplay.innerHTML = '<h2> It\'s <span> Player O </span> Turn! </h2>';
+            }
+        
+        }
+
+        function resetGame(event) {
+
+            filledSquares = ["","","","","","","","",""];
+           
+            for (let i = 0; i < squares.length; i++) {
+                squares[i].innerHTML='';
+            }
+
+
+        }
+
+        function pickPlayer() {
+            
+            randomNumber = Math.floor(Math.random() * 10) + 1;
+            
+            if (randomNumber > 5) { return true; }
+            
+            return false;
+
+        }
+
+    </script>
+
+</body>
+
+
+</html> 
