@@ -244,6 +244,7 @@ body {
     padding: 0 2rem;
     list-style: none;
 }
+
 .footer-link:hover {
     color: #7A7A7A;
     transition: all 0.3s ease;
