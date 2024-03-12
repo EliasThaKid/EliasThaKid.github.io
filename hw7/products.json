@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Stratocaster Guitar",
+        "price": 800,
+        "description": "Classic electric Stratocaster guitar.",
+        "category": {
+            "type": "electric",
+            "instrument": "guitar"
+        }
+    },
+    {
+        "name": "The Basic Drum Set",
+        "price": 1000,
+        "description": "The littest set of drums ever.",
+        "category": {
+            "type": "acoustic",
+            "instrument": "drum"
+        }
+    },
+    {
+        "name": "All White Violin",
+        "price": 1,
+        "description": "You know how it do if this is your instrument.",
+        "category": {
+            "type": "acoustic",
+            "instrument": "violin"
+        }
+    },
+    {
+        "name": "Coffee Cream Viola",
+        "price": 2,
+        "description": "It's like a violin but better?",
+        "category": {
+            "type": "acoustic",
+            "instrument": "viola"
+        }
+    },
+    {
+        "name": "DJ Interface Board",
+        "price": 2000000,
+        "description": "One of those soundboards/record scratching things rolled into one!",
+        "category": {
+            "type": "electric",
+            "instrument": "tool"
+        }
+    },
+    {
+        "name": "The Country Banjo",
+        "price": 0.25,
+        "description": "Remember the good times with this banjo!",
+        "category": {
+            "type": "acoustic",
+            "instrument": "banjo"
+        }
+    },
+    {
+        "name": "A Classic Trombone",
+        "price": 3000,
+        "description": "It's giving band kid!",
+        "category": {
+            "type": "brass",
+            "instrument": "trombone"
+        }
+    },
+    {
+        "name": "Katana",
+        "price": 999,
+        "description": "It's a killing instrument, handle with caution.",
+        "category": {
+            "type": "samurai",
+            "instrument": "sword"
+        }
+    },
+    {
+        "name": "The Matte Black Violin",
+        "price": 660,
+        "description": "The emo version, made expressly for 1300s gothic music.",
+        "category": {
+            "type": "electric",
+            "instrument": "violin"
+        }
+    },
+    {
+        "name": "The Advanced Drumset",
+        "price": 160,
+        "description": "For those who are already too turnt.",
+        "category": {
+            "type": "electric",
+            "instrument": "drum"
+        }
+    }
+]

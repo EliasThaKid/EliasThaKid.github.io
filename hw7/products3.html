@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+
+    <title> 07 </title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style id="style-tag">
+        
+        .productRoster {display: flex; align-items: center; justify-content: center; padding: 100px auto;}
+        .productListing {display: flex; flex-wrap: wrap; justify-content: flex-start; background-color: #A6675E; height: 890px; width: 970px; border-radius: 6px; overflow-y: scroll; align-content: flex-start}
+        .product {display: flex; flex-direction: column; justify-content: center; margin: 10px; text-align: center; height: 200px; width: 300px; border-radius: 6px; background-color: #332725; color: #fff;}
+        .product:hover {padding: 5px;}
+        .name {font-size: 2em;}
+    
+    </style>
+
+</head>
+
+<body>
+    
+    <div class="filter-container">
+
+        <button id="filter-button">Filter</button>
+
+        <span class="categories">
+            
+        </span>
+
+    </div>
+
+    <div class="productRoster">
+
+        <div class="productListing">
+
+           
+        </div>
+
+    </div>
+
+    
+
+
+    <script>
+
+
+        productListing = document.querySelector(".productListing");
+        categoriesFiller = document.querySelector(".productListing");
+        filterButton = document.querySelector("#filter-button");
+        categories = document.querySelector(".categories");
+        
+
+    
+
+        let categoryList = new Array();
+        var productsHTML = '';
+        var categoriesHTML = '';
+        
+
+        $.get(
+
+            "products.json",
+
+                function( data )
+                    {
+
+                        productData = data;
+                        
+
+                        productData.forEach(function(data) {
+
+                            var productHTML = '<div class="product' + ' '  + data.category.type + ' ' + data.category.instrument + '">';
+                            productHTML += '<div class="name">Name: ' + data.name + '</div>';
+                           
+                            productHTML += '</div>';
+
+                            if (!categoryList.includes(data.category.type)) {
+                                categoryList.push(data.category.type);
+                            }  
+
+                            if (!categoryList.includes(data.category.instrument)) {
+                                categoryList.push(data.category.instrument);
+                            }
+                            
+                            productsHTML += productHTML;
+
+                        });
+
+                        productListing.innerHTML = productsHTML;
+
+                       
+                    }
+
+        ).done(function() {
+
+           
+            categoriesHTML = '<select name="categories" id="product-categories"> <option value="all">all</option>';
+
+            for (i = 0; i < categoryList.length; i++) {
+
+                categoriesHTML += '<option value="' + categoryList[i]  + '">' + categoryList[i] + '</option>';
+
+            }
+
+            categories.innerHTML = categoriesHTML;            
+
+
+            categoriesSelect = document.querySelector("#product-categories");
+            
+
+            $('#filter-button').on('click', function() {
+                filterItems();
+            });
+
+
+            function filterItems(event) {
+
+                var selectedCategory = categoriesSelect.value;
+                
+                var products = document.querySelectorAll('.product');
+
+                    products.forEach(function(product) {
+
+                        var categories = product.className.split(' ');
+
+                        if ((categories.includes(selectedCategory)) || (selectedCategory == "all")) {
+
+                            product.style.display = 'flex'; 
+
+                        } else {
+
+                            product.style.display = 'none'; 
+
+                        }
+
+                    });
+
+            }
+
+    
+
+          
+
+        });
+
+        
+
+       
+
+        
+    </script>
+     
+   
+</body>
+
+
+
+</html> 

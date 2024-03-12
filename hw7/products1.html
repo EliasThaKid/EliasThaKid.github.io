@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+
+    <title> 07 </title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        .productRoster {display: flex; align-items: center; justify-content: center; padding: 100px auto;}
+        .productListing {display: flex; flex-wrap: wrap; justify-content: flex-start; background-color: #A6675E; height: 910px; width: 970px; border-radius: 6px; overflow-y: scroll; align-content: flex-start}
+        .product {display: flex; flex-direction: column; justify-content: center; margin: 10px; text-align: center; height: 200px; width: 300px; border-radius: 6px; background-color: #332725; color: #fff;}
+        .product:hover {padding: 5px;}
+        .name {font-size: 2em;}
+        .price {font-size: 1.5em;}
+        .description {font-size: 1.2em;}
+        .category {display:flex; flex-direction: row; justify-content: center; gap:5px; font-size: 1.2em;}
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="productRoster">
+
+        <div class="productListing">
+
+           
+        </div>
+
+    </div>
+
+    <!-- <div class="filter-container">
+
+        <button id="filter-button">Filter</button>
+
+        <span class="categories">
+            
+        </span>
+
+    </div> -->
+
+
+    <script>
+
+
+        productListing = document.querySelector(".productListing");
+        categoriesFiller = document.querySelector(".productListing");
+        filterButton = document.querySelector("#filter-button");
+        categories = document.querySelector(".categories");
+
+        let categoryList = new Array();
+        var productsHTML = '';
+        var categoriesHTML = '';
+        
+
+        $.get(
+
+            "products.json",
+                function( data )
+                    {
+                        productData = data;
+                        console.log("JSON data loaded successfully:", productData);
+
+                        productData.forEach(function(data) {
+                            var productHTML = '<div class="product">';
+                            productHTML += '<div class="name">Name: ' + data.name + '</div>';
+                            productHTML += '<div class="price">Price: $' + data.price + '</div>';
+                            productHTML += '<div class="description">Description: ' + data.description + '</div>';
+                            productHTML += '<div class="category">Category: ' + data.category.type + ' ' + data.category.instrument + '</div>';
+                            productHTML += '</div>';
+
+                            if (!categoryList.includes(data.category.type)) {
+                                categoryList.push(data.category.type);
+                            }  
+
+                            if (!categoryList.includes(data.category.instrument)) {
+                                categoryList.push(data.category.instrument);
+                            }
+                            
+                            productsHTML += productHTML;
+
+                        });
+
+                        productListing.innerHTML = productsHTML;
+
+                        categoriesHTML = '<select name="genre" id="genrelt">';
+
+                        for (i = 0; i < categoryList.length; i++) {
+                            console.log("gg");
+                            categoriesHTML += '<option value="' + categoryList[i]  + '">' + categoryList[i] + '</option>';
+                        }
+
+                        categories.innerHTML = categoriesHTML;
+
+                    }
+
+        )
+
+
+
+       
+
+        
+    </script>
+     
+   
+</body>
+
+
+
+</html> 
