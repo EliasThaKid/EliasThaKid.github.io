@@ -415,6 +415,7 @@
 
     #popup-nav-mobile {
         max-width: 500px;
+        overflow-x: hidden;
     }
 
    
