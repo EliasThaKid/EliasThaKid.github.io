@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta name="viewport" content= "width=device-width, initial-scale=1">
+    <title> Wocky Slush Records </title>
+
+    <link rel="stylesheet" href="styles.css">   
+    <script src="https://kit.fontawesome.com/cc5b01fdfb.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="icon" type="image/png" href="images/hh.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
+</head>
+
+<style>
+
+
+h1{
+    font-family: 'Nosifer';
+}
+
+
+#topbanner {
+    height: 50px;
+    width: 100%;
+    background-color: black;
+    color:#AC63F0 ;
+    font-family: 'Nosifer';
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+
+    min-height: 30vh;  
+    display: flex;
+    justify-content: center; 
+    align-items: center;   
+    background-image: url('images/artistsb.jpg');  
+    background-size:  cover; 
+    background-repeat: no-repeat;
+}
+
+#bigholder{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px; 
+    padding: 10px;
+    padding-bottom: 100px;
+    background: #363636;
+
+} 
+
+.square{
+    position: relative;
+    align-items: center;
+    display: flex;
+    height: 300px;
+    width: 75%; 
+    max-width: 600px; 
+    margin: 0 auto; 
+    margin-bottom: 20px;
+    border: 2px solid #000; 
+    z-index: 1;
+}
+
+.square img{
+    width: 100%; 
+    height: 100%;
+    z-index: 0;
+    display: block;
+}
+
+
+
+
+.overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color:#AC63F0 ; 
+    background: rgba(0, 0, 0, 0.5); 
+    opacity: 0; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+    font-family: 'Nosifer';
+    font-size: 25px;
+}
+
+
+
+.square:hover .overlay-text,
+.square:hover {
+    opacity: 1; 
+}
+
+
+@media screen and (max-width: 960px) {
+
+.content {
+    height: 600px;
+}
+
+.hbox {
+    font-size: 1.1em;
+    width: 90%;
+}
+
+
+.box {
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    background-color: rgba(150, 158, 125, .8);
+    border-radius: 60px;
+    height: 300px;
+    width: 100%;
+    margin-top: 30px;
+    font-size: 2.2em;
+}
+
+.popup-menu {
+    display: none;
+}
+
+
+.wsl img {
+    width: 125px;
+    height: 125px;
+}
+
+
+
+} 
+
+@media screen and (max-width: 600px) {
+
+.hbox {
+    font-size: 0.8em;
+    width: 100%;
+}
+
+.box {
+    font-size: 1.6em;
+
+}
+
+
+
+
+}
+
+
+</style>
+
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="navbar-container">
+
+            <a href="index.html" id="navbar-logo"> 
+                <img src="/images/hh.png"/> </a>
+
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span> <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <ul class="navbar-menu">
+
+                <li class="navbar-item">
+
+                    <button class="nav-button" id="nb1" > Our Sound </button>
+                    <ul id="menu1" class="popup-menu">
+                        <div class="popup-menu-container">
+                            <li class="navbar-link"> <a href="/artist.html"> Our Artists </a> </li>
+                            <li class="navbar-link"> <a href="/catalog.html"> Our Catalog </a> </li>
+                            <li class="navbar-link"> <a href="/world.html"> Our World </a> </li>
+                        </div>
+                    </ul>
+
+                </li>
+
+                <li class="navbar-item">
+
+                    <button class="nav-button" id="nb2"> Meet Us </button> 
+                    <ul id="menu2" class="popup-menu">
+                        <div class="popup-menu-container">
+                            <li class="navbar-link"> <a href="/index.html"> The Label</a> </li>
+                            <li class="navbar-link"> <a href="/sign.html">Get Signed</a> </li>
+                            <li class="navbar-link"> <a href="/mission.html"> The Mission </a> </li>
+                            <li class="navbar-link"> <a href="/legal.html"> Legal FAQ </a> </li>
+                        </div>
+                    </ul>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+        
+
+
+    </nav>
+     
+    <div id="popup-nav-mobile">
+
+        <ul class="mobile-list">
+
+            <li class="mobile-link"> <a href="/artist.html"> Our Artists </a> </li>
+            <li class="mobile-link"> <a href="/catalog.html"> Our Catalog </a> </li>
+            <li class="mobile-link"> <a href="/world.html"> Our World </a> </li>
+            <li class="mobile-link"> <a href="/index.html"> The Label</a> </li>
+            <li class="mobile-link"> <a href="/sign.html">Get Signed</a></li>
+            <li class="mobile-link"> <a href="/mission.html"> The Mission </a> </li>
+            <li class="mobile-link"> <a href="/legal.html"> Legal FAQ </a> </li>
+
+        </ul>
+    </div>
+
+
+    <script src="app.js"></script>
+
+    <div class = banner id = topbanner> 
+       <h1>Our Artists!</h1>
+    </div>
+
+    <div class = artistcontainer id = bigholder>
+    
+        <div class = square>
+            <img src ="images/uzi (wsr).jpg">
+            <div class="overlay-text">Uzi</div>
+        </div>
+        <div class = square>
+            <img src ="images/Future2 (wsr).jpg ">
+            <div class="overlay-text">Future</div>
+        </div>
+        <div class = square>
+            <img src ="images/kanakan3 (wsr).jpg ">
+            <div class="overlay-text">KanKan</div>
+        </div>
+        <div class = square>
+            <img src ="images/summrs4 (wsr).jpg ">
+            <div class="overlay-text">Summrs</div>
+        </div>
+        <div class = square>
+            <img src ="images/yeat2 (wsr).jpg">
+            <div class="overlay-text">Yeat</div>
+        </div>
+        <div class = square>
+            <img src ="images/Yachty (wsr).jpg">
+            <div class="overlay-text">Yachty</div>
+        </div>
+        <div class = square>
+            <img src ="images/smokepurpp2 (wsr).jpg ">
+            <div class="overlay-text">Smokepurpp</div>
+        </div>
+        <div class = square>
+            <img src ="images/thug2 (wsr).webp">
+            <div class="overlay-text"> Young Thug</div>
+        </div>
+        <div class = square>
+            <img src ="images/carti2 (wsr).jpg">
+            <div class="overlay-text">Carti</div>
+        </div>
+
+
+
+    </div>
+    
+    
+    <footer>
+
+        <div class="waves">
+             <div class="wave" id="wave1"></div>
+             <div class="wave" id="wave2"></div>
+             <div class="wave" id="wave3"></div>
+             <div class="wave" id="wave4"></div>
+        </div>
+ 
+        <ul class="social-links">
+             <li>
+                 <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+             </li>
+             <li>
+                 <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+             </li>
+             <li>
+                 <a href="/index.html"> <img src="images/hh.png" id="img-link"></img></a>
+             </li>
+             <li>
+                 <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+             </li>
+             <li>
+                 <a href="https://www.linkedin.com/feed/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+             </li>
+        </ul>
+ 
+        <ul class="menu">
+             <li>
+                <a href="/index.html">Label</a>
+                <a href="/artist.html">Artists</a>
+                <a href="/sign.html">Sign</a>
+                <a href="/legal.html">Legal/FAQ</a>
+             </li>
+        </ul>
+        
+     </footer>
+ 
+     
+ 
+ 
+    
+    
+    
+    <script  src="app.js"> 
+    
+    
+    </script>
+
+
+
+</body>
+
+</html> 
