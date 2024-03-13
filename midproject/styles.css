@@ -424,6 +424,10 @@
         display: none;
     }
 
+    .waves {
+        display: none;
+    }
+
     footer .menu li a {
         font-size: 0.8em;
     }
