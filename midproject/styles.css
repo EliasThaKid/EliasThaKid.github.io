@@ -317,6 +317,7 @@
         flex-wrap: wrap;
         position: fixed;
         width: 100%;
+        max-width: 960px;
         z-index: 999;
         background-color: #363636;
         overflow-y: scroll;
@@ -411,6 +412,11 @@
    
 } 
 @media screen and (max-width: 500px) {
+
+    #popup-nav-mobile {
+        max-width: 500px;
+    }
+
    
     .social-links {
         padding: 40px 0px 0px 0px;
