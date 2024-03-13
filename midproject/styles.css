@@ -325,7 +325,7 @@
     }
 
     .mobile-link {
-        width: 450px;
+        width: 400px;
         height: 60px;
         display: flex;
         justify-content: center;
@@ -422,7 +422,6 @@
         overflow-x: hidden;
     }
 
-   
     .social-links {
         padding: 40px 0px 0px 0px;
     }
@@ -438,6 +437,10 @@
 
     footer .menu li a {
         font-size: 0.8em;
+    }
+
+    .mobile-link {
+        width: 300px;
     }
     
 }
