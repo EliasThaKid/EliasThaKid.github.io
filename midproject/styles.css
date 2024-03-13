@@ -413,6 +413,10 @@
 } 
 @media screen and (max-width: 500px) {
 
+    body {
+        max-width: 500px;
+    }
+
     #popup-nav-mobile {
         max-width: 500px;
         overflow-x: hidden;
@@ -431,9 +435,6 @@
         display: none;
     }
 
-    .waves {
-        display: none;
-    }
 
     footer .menu li a {
         font-size: 0.8em;
