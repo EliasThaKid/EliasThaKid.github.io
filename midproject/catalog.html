@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta name="viewport" content= "width=device-width, initial-scale=1">
+    <title> Wocky Slush Records </title>
+
+    <link rel="stylesheet" href="styles.css">   
+    <script src="https://kit.fontawesome.com/cc5b01fdfb.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="icon" type="image/png" href="images/hh.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
+    
+<!-- catalog styles -->
+    <meta name=‘viewport’ content=“width=device-width, initial-scale=1”>
+    <title> Catalog Page </title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        h1{
+            font-family: 'Nosifer';
+        }
+
+        #topbanner {
+            height: 50px;
+            width: 100%;
+            background-color: black;
+            color:#AC63F0 ;
+            font-family: 'Nosifer';
+            text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px  1px 0 #000,
+                1px  1px 0 #000;
+            min-height: 30vh;  
+            display: flex;
+            justify-content: center; 
+            align-items: center;   
+            background-image: url('images/catalog_bg.webp');  
+            background-size:  cover; 
+            background-repeat: no-repeat;
+        }
+
+        .product-container {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #fff; 
+            border-radius: 5px;
+            background-color: #fff;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 80px;
+        }
+        .product {
+            flex-basis: calc(25% - 20px); 
+            margin: 10px 0;
+            border: .5px;
+            padding: 20px;
+            justify-content: space-between;
+        }
+        .product-name {
+            font-weight: bold;
+            font-size: 30px; 
+            color: #000; 
+            margin: 5px 0;
+            cursor: pointer;
+        }
+        .product-description, .product-categories { 
+            margin-top: 5px; 
+            cursor: pointer;
+        }
+        .product-price {
+            text-align: right;
+            font-size: 25px;
+            cursor: pointer;
+        }
+        .product-image {
+            width: 100%; 
+            height: auto;
+            aspect-ratio: 1 / 1;
+            object-fit: cover; 
+        }
+        .product-image:hover {
+            filter: brightness(80%);
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="navbar-container">
+
+            <a href="index.html" id="navbar-logo"> 
+                <img src="/images/hh.png"/> </a>
+
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span> <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <ul class="navbar-menu">
+
+                <li class="navbar-item">
+
+                    <button class="nav-button" id="nb1" > Our Sound </button>
+                    <ul id="menu1" class="popup-menu">
+                        <div class="popup-menu-container">
+                            <li class="navbar-link"> <a href="/artist.html"> Our Artists </a> </li>
+                            <li class="navbar-link"> <a href="/catalog.html"> Our Catalog </a> </li>
+                            <li class="navbar-link"> <a href="/world.html"> Our World </a> </li>
+                        </div>
+                    </ul>
+
+                </li>
+
+                <li class="navbar-item">
+
+                    <button class="nav-button" id="nb2"> Meet Us </button> 
+                    <ul id="menu2" class="popup-menu">
+                        <div class="popup-menu-container">
+                            <li class="navbar-link"> <a href="/index.html"> The Label</a> </li>
+                            <li class="navbar-link"> <a href="/sign.html">Get Signed</a> </li>
+                            <li class="navbar-link"> <a href="/mission.html"> The Mission </a> </li>
+                            <li class="navbar-link"> <a href="/legal.html"> Legal FAQ </a> </li>
+                        </div>
+                    </ul>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+     
+    <div id="popup-nav-mobile">
+
+        <ul class="mobile-list">
+
+            <li class="mobile-link"> <a href="/artist.html"> Our Artists </a> </li>
+            <li class="mobile-link"> <a href="/catalog.html"> Our Catalog </a> </li>
+            <li class="mobile-link"> <a href="/world.html"> Our World </a> </li>
+            <li class="mobile-link"> <a href="/index.html"> The Label</a> </li>
+            <li class="mobile-link"> <a href="/sign.html">Get Signed</a></li>
+            <li class="mobile-link"> <a href="/mission.html"> The Mission </a> </li>
+            <li class="mobile-link"> <a href="/legal.html"> Legal FAQ </a> </li>
+
+        </ul>
+    </div>
+
+    <script src="app.js"></script>
+
+
+
+
+<!-- Catalog code -->
+    <div class = banner id = topbanner> 
+        <h1>Catalog</h1>
+     </div>
+ 
+    <div class="product-container" id="catalog">
+
+        <div class="product">
+            <img src="images/catalog_redshirt.png" alt="Red T-shirt" class="product-image">
+            <div class="product-name">WSR Red T-shirt</div>
+            <div class="product-description">High-quality cotton red t-shirt with WSR logo.</div>
+            <div class="product-categories">Categories: Merch, Clothing</div>
+            <div class="product-price">$20.00</div>
+        </div>
+
+        <div class="product">
+            <img src="images/catalog_blackshirt.png" alt="Black T-shirt" class="product-image">
+            <div class="product-name">WSR Black T-shirt</div>
+            <div class="product-description">High-quality cotton black t-shirt with WSR logo.</div>
+            <div class="product-categories">Categories: Merch, Clothing</div>
+            <div class="product-price">$20.00</div>
+        </div>
+
+        <div class="product">
+            <img src="images/catalog_blueshirt.png" alt="Blue T-shirt" class="product-image">
+            <div class="product-name">WSR Blue T-shirt</div>
+            <div class="product-description">High-quality cotton blue t-shirt with WSR logo.</div>
+            <div class="product-categories">Categories: Merch, Clothing</div>
+            <div class="product-price">$20.00</div>
+        </div>
+
+        <div class="product">
+            <img src="images/catalog_tshirt.png" alt="White T-shirt" class="product-image">
+            <div class="product-name">WSR White T-shirt</div>
+            <div class="product-description">High-quality cotton white t-shirt with WSR logo.</div>
+            <div class="product-categories">Categories: Merch, Clothing</div>
+            <div class="product-price">$20.00</div>
+        </div>
+
+        <div class="product">
+            <img src="images/catalog_uzi.webp" alt="Luv Is Rage 2 Album" class="product-image">
+            <div class="product-name">Luv Is Rage 2 Record</div>
+            <div class="product-description">Lil Uzi Vert</div>
+            <div class="product-categories">Categories: Music, Albums</div>
+            <div class="product-price">$15.99</div>
+        </div>
+
+        <div class="product">
+            <img src="images/catalog_carti.webp" alt="Carti Record" class="product-image">
+            <div class="product-name">Whole Lotta Red Record</div>
+            <div class="product-description">Playboi Carti</div>
+            <div class="product-categories">Categories: Music, Albums</div>
+            <div class="product-price">$15.99</div>
+        </div>
+
+        <div class="product">
+            <img src="images/catalog_future.webp" alt="Luv Is Rage 2 Album" class="product-image">
+            <div class="product-name">I NEVER LIKED YOU Record</div>
+            <div class="product-description">Future</div>
+            <div class="product-categories">Categories: Music, Albums</div>
+            <div class="product-price">$15.99</div>
+        </div>
+
+        <div class="product">
+            <img src="images/wsr logo.png" alt="WSR Sticker Pack" class="product-image">
+            <div class="product-name">WSR Sticker Pack</div>
+            <div class="product-description">A pack of 10 unique stickers.</div>
+            <div class="product-categories">Categories: Accessories</div>
+            <div class="product-price">$5.50</div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <footer>
+
+        <div class="waves">
+             <div class="wave" id="wave1"></div>
+             <div class="wave" id="wave2"></div>
+             <div class="wave" id="wave3"></div>
+             <div class="wave" id="wave4"></div>
+        </div>
+ 
+        <ul class="social-links">
+             <li>
+                 <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+             </li>
+             <li>
+                 <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+             </li>
+             <li>
+                 <a href="/index.html"> <img src="images/hh.png" id="img-link"></img></a>
+             </li>
+             <li>
+                 <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+             </li>
+             <li>
+                 <a href="https://www.linkedin.com/feed/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+             </li>
+        </ul>
+ 
+        <ul class="menu">
+             <li>
+                <a href="/index.html">Label</a>
+                <a href="/artist.html">Artists</a>
+                <a href="/sign.html">Sign</a>
+                <a href="/legal.html">Legal/FAQ</a>
+             </li>
+        </ul>
+        
+     </footer>
+     
+ 
+ 
+    
+    
+    
+    <script  src="app.js"></script>
+
+</body>
+
+</html> 
