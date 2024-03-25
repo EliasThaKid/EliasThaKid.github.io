@@ -68,6 +68,7 @@
             .then((pokemonData) => {
                 const userPokemon = pokemonData;
                 
+                /* Api only has descriptions for pokemon 1-30 */
                 
                 if (chosenPoke <= 30) {
                     fetch(`https://pokeapi.co/api/v2/characteristic/${chosenPoke}`)
