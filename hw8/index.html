@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+
+        <title> 08 API Fun </title>
+
+        <style>
+
+            #pokemon-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background-color: rgb(131, 135, 54);
+                border-radius: 5px;
+                padding: 50px;
+            }
+
+            .pokeID,
+            .name-wrap,
+            .poke-img {
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            .caption-fonts {
+                font-size: 40px;
+                color: #fff;
+            }
+
+            .body3-fonts {
+                font-size: 40px;
+                color: #fff;
+            }
+
+            .poke-img img {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                background-color: rgb(255, 255, 255);
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            
+        </style>
+
+    </head>
+
+        <div id="pokemon-container">
+        
+        </div>
+
+
+    <body>
+
+        
+
+        <script>
+            let chosenPoke = prompt("Enter a number 1-1000");
+            const pokemonContainer = document.getElementById("pokemon-container");
+            pokemonContainer.innerHTML = "";
+            let pokemon;
+
+
+            fetch(`https://pokeapi.co/api/v2/pokemon/${chosenPoke}`)
+            .then((response) => response.json())
+            .then((data) => {
+
+                userPokemon = data;
+                displayUserPokemon(userPokemon);
+               
+            });
+
+           
+
+            // async function getUserPokemon(id) {
+
+            //     try {
+            //         const [pokemon, pokeDescription] = await Promise.all([
+
+            //             fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then((res) => res.json()),
+                        
+
+            //         ]);
+
+            //         return pokemon;
+
+            //     } catch {
+
+            //         console.log("Failed to get the Pokemon :(");
+
+            //     }
+            // }
+
+            // async function getUserPokemonDesc(id) {
+
+            //     try {
+
+            //         const [pokeDescription] = await Promise.all([
+
+            //             fetch(`https://pokeapi.co/api/v2/characteristic/${id}`).then((res) => res.json())
+
+            //         ]);
+
+                   
+            //         if (pokeDescription.descriptions && pokeDescription.descriptions.length > 0) {
+            //             description = pokeDescription.descriptions[7].description;
+            //         }
+                            
+            //         return description;
+
+            //     } catch {
+
+                    
+            //         description = "No descriptions available";
+            //         return description;
+
+            //     }
+
+      
+
+            
+          
+
+            function displayUserPokemon(pokemon) {
+                const pokemonID = pokemon.id;
+                const display = document.createElement("div");
+                display.className = "display";
+                display.innerHTML = `
+                    <div class="pokeID">
+                        <p class="caption-fonts">#${pokemonID}</p>
+                    </div>
+                    <div class="name-wrap">
+                        <p class="body3-fonts">${pokemon.name}</p>
+                    </div>
+                    <div class="poke-img">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonID}.png" alt="${pokemon.name}" />
+                    </div>
+                `;
+
+                pokemonContainer.appendChild(display);
+            }
+
+                
+ 
+        </script>
+    </body>
+
+</html> 
