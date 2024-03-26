@@ -25,22 +25,33 @@
                 text-align: center;
             }
 
-            .caption-fonts {
+            .inner-textm {
                 font-size: 40px;
                 color: #fff;
             }
 
-            .body3-fonts {
-                font-size: 40px;
-                color: #fff;
+            .inner-texts {
+                font-size: 30px;
+                color: rgb(228, 222, 222);
             }
 
+
+            
             .poke-img img {
-                width: 150px;
-                height: 150px;
+                width: 250px;
+                height: 250px;
                 border-radius: 50%;
                 background-color: rgb(255, 255, 255);
                 box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .content {
+                border-radius: 30px;
+                padding: 20px 30px 20px 30px;
+                background-color: rgb(146, 44, 44);
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
             
         </style>
@@ -69,7 +80,7 @@
                 const userPokemon = pokemonData;
                 
                 /* Api only has descriptions for pokemon 1-30 */
-                
+
                 if (chosenPoke <= 30) {
                     fetch(`https://pokeapi.co/api/v2/characteristic/${chosenPoke}`)
                         .then((response) => response.json())
@@ -95,20 +106,22 @@
           
 
             function displayUserPokemon(pokemon, pokemonDescription) {
+
                 const pokemonID = pokemon.id;
                 const display = document.createElement("div");
                 display.className = "display";
+
                 if (pokemonDescription === "") {
 
                     display.innerHTML = `
                     <div class="pokeID">
-                        <p class="caption-fonts">#${pokemonID}</p>
+                        <p class="inner-textm">#${pokemonID}</p>
                     </div>
                     <div class="name-wrap">
-                        <p class="body3-fonts">${pokemon.name}</p>
+                        <p class="inner-textm">${pokemon.name}</p>
                     </div>
                     <div class="name-wrap">
-                        <p class="body3-fonts">${pokemon.types[0].type.name}</p>
+                        <p class="inner-textm">${pokemon.types[0].type.name}</p>
                     </div>
                     <div class="poke-img">
                         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonID}.png" alt="${pokemon.name}" />
@@ -120,16 +133,16 @@
 
                     display.innerHTML = `
                     <div class="pokeID">
-                        <p class="caption-fonts">#${pokemonID}</p>
+                        <p class="inner-textm">#${pokemonID}</p>
                     </div>
                     <div class="name-wrap">
-                        <p class="body3-fonts">${pokemon.name}</p>
+                        <p class="inner-textm">${pokemon.name}</p>
                     </div>
                     <div class="name-wrap">
-                        <p class="body3-fonts">${pokemon.types[0].type.name}</p>
+                        <p class="inner-textm">${pokemon.types[0].type.name}</p>
                     </div>
                     <div class="name-wrap">
-                        <p class="body3-fonts">${pokemonDescription}</p>
+                        <p class="inner-textm">${pokemonDescription}</p>
                     </div>
                     <div class="poke-img">
                         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonID}.png" alt="${pokemon.name}" />
@@ -141,8 +154,42 @@
                 
 
                 pokemonContainer.appendChild(display);
+                appendQuestionsForHW();
             }
 
+
+            function appendQuestionsForHW() {
+
+                const content = document.createElement("div");
+                content.className = "content";
+                content.innerHTML = ` 
+                    <p class="inner-texts"> 1) The API I chose is the Pokemon API! 
+                        It has oodles of data about Pokemon from all the games
+                         except sword ⚔️ and shield 🛡️. </br>
+                    2) The website is 
+                    <a href="https://pokeapi.co/" target="_blank"> https://pokeapi.co/ </a>. </br>
+                    3) The API is pretty straightforward, and you need not 
+                    add parameters. Still, if I were building out a larger scale 
+                    application you can add parameters to limit the amount of data 
+                    returned by appending limit= in a query. </br>
+                    4) This application could be useful for building 
+                    fan applications that use Pokedata, or 
+                    if you wanted to build a system to help you optimize 
+                    your gameplay to discover the hyperspecific tidbits 
+                    about Pokemon breeding and 
+                    items and whatnot for more competitive Poke teams. </br>
+                    5) The most challenging/annoying thing was simultaneously 
+                    managing the asynchronous data management in code and 
+                    also learning the Poke documentation, which even though 
+                    it was relatively well documented was still kinda confusing, 
+                    and the API needs some maintenance in some aspects as 
+                    data is not uniformly provided for all pokemon. 
+                    The most satisfying was actually displaying the data! 
+                    </p>` 
+                pokemonContainer.appendChild(content);
+            }
+
+            
                 
  
         </script>
