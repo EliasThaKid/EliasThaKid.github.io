@@ -4,7 +4,7 @@
 <head>
 
     <meta name="viewport" content= "width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 
     <script src="https://kit.fontawesome.com/cc5b01fdfb.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -13,16 +13,18 @@
 
     <meta name="keywords" content="multi-racial, blog">
     
+    <link rel="stylesheet" 
+    href="css/swiper-bundle.min.css" />
 
     <title> Mixed Messages </title>
 
     <style>
 
-         
         .hero-section {
+
             position: relative;
             width: 100%;
-            height: 70vh; 
+            height: 600px; 
             z-index: 1;
             overflow: hidden;
         }
@@ -36,27 +38,24 @@
             overflow: hidden;
         }
 
-        .wsl {
-            background-color: rgba(150, 158, 125, .8);
-            height: 35vh;
-            width: 55vh;
+        .mxmhead {
+            
+            background-color: #5D4037;
+            height: 200px;
+            width: 500px;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-            font-size: 1.9em;
-        
-            border-radius: 90px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            font-size: 70px;
+            color: #ffe88c;
             z-index: 3;
+            padding: 20px;
+            border-radius: 10px;
             position: relative;
-            margin: 70px auto;
+            margin: 165px auto;
         }
 
-        .wsl img {
-            width: 125px;
-            height: 125px;
-        }
 
         .content {
             position: relative;
@@ -65,29 +64,50 @@
             width: 100%;
             background-color: #363636;
             height: 645px;
-            
-            padding: 40px 50px;
+            padding: 30px 50px;
             flex-direction: column;
             text-align: center;
             z-index: 4;
         
         }
 
+        #testimonials {
+            background-color: #5D4037;
+        }
+
+
         .hbox {
             position: relative;
             flex-direction: column;
             display: flex;
-            padding: 28px;
-            background-color: rgba(150, 158, 125, .8);
             border-radius: 60px;
-            width: 70%;
-            font-size: 1.2em;
+            width: 60%;
+            font-size: 40px;
             height: 115px;
-            color: #fafafa;
-            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+            margin: 20px auto 70px auto;
+            color: #ffe88c;
+            
             font-weight: 600;
             z-index: 900;
         }
+        
+        .testhead {
+
+            position: relative;
+            flex-direction: column;
+            text-align: center;
+            display: flex;
+            border-radius: 60px;
+            width: 90%;
+            font-size: 30px;
+            height: 115px;
+            margin: 50px auto 20px auto;
+            color: #ffe88c;
+            font-weight: 600;
+            z-index: 900;
+
+        }
+
 
         .box {
 
@@ -110,65 +130,206 @@
             
         }
 
-       
+        .container {
 
-
-        @media screen and (max-width: 960px) {
-
-            .content {
-                height: 600px;
-            }
-            
-            .hbox {
-                font-size: 1.1em;
-                width: 90%;
-            }
-
-
-            .box {
-
-                position: relative;
-                display: flex;
-                align-items: center;
-                text-align: center;
-                padding: 30px;
-                background-color: rgba(150, 158, 125, .8);
-                border-radius: 60px;
-                height: 300px;
-                width: 100%;
-                margin-top: 30px;
-                font-size: 2.2em;
-            }
-
-            .popup-menu {
-                display: none;
-            }
-          
-
-            .wsl img {
-                width: 125px;
-                height: 125px;
-            }
-
-
-        } 
-
-        @media screen and (max-width: 600px) {
-
-            .hbox {
-                font-size: 0.8em;
-                width: 100%;
-            }
-
-            .box {
-                font-size: 1.6em;
-
-            }
-
-
-            
+            height: 600px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: #5D4037;
+            overflow: hidden;
 
         }
+
+        .testimonial {
+
+            position: relative;
+            max-width: 900px;
+            width: 100%;
+            padding: 50px 0;
+            row-gap: 30px;
+            background-color: #363636;
+            border-radius: 30px;
+            overflow: hidden;
+            margin-bottom: 100px;
+            height: 600px;
+            overflow-y: scroll;
+
+        }
+
+        .testimonial .slide {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            overflow: hidden;
+        
+        }
+
+        .slide p {
+
+            text-align: center;
+            padding: 0 160px;
+            font-weight: 400;
+            font-size: 20px;
+            color: #fafafa;
+
+        }
+
+        #right-quote,
+        #left-quote {
+            color: #6c893b;
+        }
+
+        #right-quote {
+            font-size: 30px;
+            margin-left: 590px;
+        }
+
+        #left-quote {
+            margin-right: 590px;
+            font-size: 30px;
+            margin-bottom: 15px;
+        
+        }
+
+        .slide .details {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+        }
+
+        .details .name {
+
+            font-size: 20px;
+            font-weight: 600;
+            color: #fafafa;
+
+        }
+
+        .nav-btn {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            /* transform: translateY(30px); */
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-btn::after, 
+        .nav-btn::before {
+            font-size: 20px;
+            color: #ffe88c;
+        }
+
+        .nav-btn::after:hover,
+        .nav-btn::before {
+            color: #5D4037;
+        }
+
+        .swiper-pagination-bullet {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: #4070f4;
+        }
+    
+    @media screen and (max-width: 960px) {
+
+        .container {
+            height: 750px;
+        }
+
+        .testhead {
+            font-size: 25px;
+            margin: -15px auto 10px auto;
+        }
+
+        .content {
+            height: 600px;
+        }
+        
+        .hbox {
+            font-size: 35px;
+            margin: 20px auto 35px auto;
+            width: 90%;
+        }
+
+
+        .box {
+
+            position: relative;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+            background-color: rgba(150, 158, 125, .8);
+            border-radius: 60px;
+            height: 300px;
+            width: 100%;
+            margin-top: 30px;
+            font-size: 2.2em;
+        }
+
+        .popup-menu {
+            display: none;
+        }
+        
+
+        .mxmhead {
+            padding: 10px;
+            width: 400px;
+        }
+
+
+    } 
+
+    @media screen and (max-width: 768px) {
+
+        #left-quote {
+            margin-right: 400px;
+            margin-bottom: 20px;
+        }
+
+        #right-quote {
+            margin-left: 400px;
+            margin-top: 20px;
+        }
+
+        .slide p {
+            padding: 0 20px;
+        }
+        .nav-btn {
+            display: none;
+        }
+
+    }
+
+    @media screen and (max-width: 600px) {
+
+        .hbox {
+            font-size: 30px;
+            width: 100%;
+        }
+
+        .testhead {
+            margin: 25px auto 20px auto;
+            font-size: 20px;
+        }
+
+        .box {
+            font-size: 1.6em;
+
+        }
+
+    }
 
     </style>
 
@@ -177,61 +338,61 @@
 <body>
 
     <nav class="navbar">
+        <div class="totalnav">
 
-        <div class="navbar-container">
+            <div class="loginsect">
 
-            <a href="index.html" id="navbar-logo"> 
-                <img src="/midproject/images/hh.png"/> </a>
-
-            <div class="navbar__toggle" id="mobile-menu">
-                <span class="bar"></span> <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-
-            <ul class="navbar-menu">
-
-                <li class="navbar-item">
-
-                    <li class="navbar-link"> <a href="/midproject/index.html"> Home </a> </li>
-
-                </li>
-
-                <li class="navbar-item">
-
-                    <li class="navbar-link"> <a href="/midproject/index.html"> Discussions </a> </li>
-                    <!-- <button class="nav-button" id="nb1" > Our Sound </button>
-                    <ul id="menu1" class="popup-menu">
-                        <div class="popup-menu-container">
-                            <li class="navbar-link"> <a href="/midproject/artist.html"> Our Artists </a> </li>
-                            <li class="navbar-link"> <a href="/midproject/catalog.html"> Our Catalog </a> </li>
-                            <li class="navbar-link"> <a href="/midproject/world.html"> Our World </a> </li>
-                        </div>
-                    </ul> -->
-
-                </li>
-
-                <li class="navbar-item">
-
-                    <li class="navbar-link"> <a href="/midproject/index.html"> Resources </a> </li>
-                    <!-- <button class="nav-button" id="nb2"> Meet Us </button> 
-                    <ul id="menu2" class="popup-menu">
-                        <div class="popup-menu-container">
-                            <li class="navbar-link"> <a href="/midproject/index.html"> The Label</a> </li>
-                            <li class="navbar-link"> <a href="/midproject/sign.html">Get Signed</a> </li>
-                            <li class="navbar-link"> <a href="/midproject/mission.html"> The Mission </a> </li>
-                            <li class="navbar-link"> <a href="/midproject/legal.html"> Legal FAQ </a> </li>
-                        </div>
-                    </ul> -->
-
-                </li>
-
-            </ul>
-
+                <div class="unknownuserstyle">
+        
+                    <a href="#" class="login-link"> log-in </a>
+                    <a href="#" class="login-link"> sign-up </a>
+        
+                </div>
+                
         </div>
 
-        
+            <div class="navbar-container">
 
+                <a href="index.html" id="navbar-logo"> 
+                    <i class="fa-solid fa-mitten"></i> </a>
 
+                <div class="navbar__toggle" id="mobile-menu">
+                    <span class="bar"></span> <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+
+                <ul class="navbar-menu">
+
+                    <li class="navbar-item">
+
+                        <div class="navbar-link-container" id="homelink">
+                            <a href="/mxmfinal/index.html"> Home </a> 
+                        </div>
+                        
+
+                    </li>
+
+                    <li class="navbar-item">
+
+                        <div class="navbar-link-container" id="desclink">
+                        <a href="/mxmfinal/discussions.html"> Discussions </a> 
+                        </div>
+
+                    </li>
+
+                    <li class="navbar-item">
+
+                        <div class="navbar-link-container" id="reslink">
+                            <a href="/mxmfinal/resources.html"> Resources </a> 
+                        </div>
+
+                    </li>
+
+                </ul>
+
+            </div>     
+
+        </div>
     </nav>
      
     <div id="popup-nav-mobile">
@@ -247,36 +408,151 @@
     </div>
 
     <div class="hero-section">
+
+        <video src="/mxmfinal/images/mov1.mp4" class="welcome" autoplay muted></video>
+
+        <script>
+
+            const moviesArray = ["/mxmfinal/images/mov1.mp4", "/mxmfinal/images/mov2.mp4", "/mxmfinal/images/mov3.mp4"];
+            let currentVideoIndex = 0;
+            const videoElement = document.querySelector('.welcome');
+    
+            videoElement.addEventListener('ended', function() {
+               
+                if (currentVideoIndex < 2) {
+                    currentVideoIndex++;
+                } else {
+                    currentVideoIndex = 0;
+                }
+               
+                videoElement.src = moviesArray[currentVideoIndex];
+               
+                videoElement.play();
+            });
+
+        </script>
+
+        <div class="mxmhead">  Mixed Messages  </div>
         
-        <video src="/midproject/images/background.mp4" class="welcome" autoPlay loop muted> 
-        </video>
-
-        <div class="wsl">  <img src="/midproject/images/hh.png"/>  </div>
-
+        <div class="subtext">
+            <div class="subtexttext"></div>
+        </div>
     </div>
+
 
     <div class="content">
 
         <div class="hbox">
-             <h1> The Wonder Sound Recording Label </h1>
+             <h1> The Purpose of This Course </h1>
         </div>
        
         <div class="box">
-            <p> Welcome to the label thats making it happen.
-                 Wonder Sound is on the cutting edge of the rap game. 
-                 Pour up and explore what it means to be a real WOCKSTAR. </p>
+            <p> Race and Identity are confusing enough </p>
         </div>
     </div>
 
+
+   
+
+    <div class="container">
+
+        <div class="testhead">
+            <h1> Testimonials From Our Students </h1>
+       </div>
+
+        <div class="testimonial mySwiper">
+
+            <div class="testi-content swiper-wrapper">
+
+                <div class="slide swiper-slide">
+                    <img src="" alt="" class="image">
+
+                    <i class="fa-solid fa-quote-left" id="left-quote"></i>
+
+                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore 
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                        exercitation ullamco laboris nisi ut aliquip ex ea 
+                        commodo consequat. Duis aute irure dolor in 
+                        reprehenderit in voluptate velit esse cillum dolore 
+                        eu fugiat nulla pariatur. </p>
+
+                        <i class="fa-solid fa-quote-right" id="right-quote"></i> 
+
+                        <div class="details">
+                            <span class="name"> Some Guy </span>
+                            <span class="job"> Unemployed </span>
+                        </div>
+                </div>
+
+                <div class="slide swiper-slide">
+                    <img src="" alt="" class="image">
+
+                    <i class="fa-solid fa-quote-left" id="left-quote"></i>
+
+                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore 
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                        exercitation ullamco laboris nisi ut aliquip ex ea 
+                        commodo consequat. Duis aute irure dolor in 
+                        reprehenderit in voluptate velit esse cillum dolore 
+                        eu fugiat nulla pariatur. </p>
+
+                        <i class="fa-solid fa-quote-right" id="right-quote"></i> 
+
+                        <div class="details">
+                            <span class="name"> Some Guy </span>
+                            <span class="job"> Unemployed </span>
+                        </div>
+                </div>
+
+               
+            </div>
+
+            <div class="swiper-button-next nav-btn"></div>
+            <div class="swiper-button-prev nav-btn"></div>
+            <div class="swiper-pagination"></div>
+
+        </div>
+
+        <script src="js/swiper-bundle.min.js"></script>
+    
+        <script>
+
+            var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            grabCursor: true,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            });
+
+        </script>
+
+    </div>
+
+
+    <div class="content">
+
+        <div class="hbox">
+             <h1> The Purpose of This Course </h1>
+        </div>
+       
+        <div class="box">
+            <p> Race and Identity are confusing enough </p>
+        </div>
+    </div>
+    
+    
     <footer>
 
-        <div class="waves">
-             <div class="wave" id="wave1"></div>
-             <div class="wave" id="wave2"></div>
-             <div class="wave" id="wave3"></div>
-             <div class="wave" id="wave4"></div>
-        </div>
- 
+    
         <ul class="social-links">
              <li>
                  <a href="https://www.youtube.com/" target="_blank" id="icon1"><i class="fa-brands fa-youtube"></i></a>
@@ -285,7 +561,7 @@
                  <a href="https://www.instagram.com/" target="_blank" id="icon2"><i class="fa-brands fa-instagram"></i></a>
              </li>
              <li>
-                 <a href="/midproject/index.html"> <img src="images/hh.png" id="img-link"></img></a>
+                 <a href="/midproject/index.html"> <i class="fa-solid fa-mitten"></i> </img></a>
              </li>
              <li>
                  <a href="https://www.facebook.com/" target="_blank" id="icon3"><i class="fa-brands fa-facebook"></i></a>
@@ -295,6 +571,7 @@
              </li>
         </ul>
  
+        <script src="js/swiper-bundle.min.js"></script>
         <ul class="menu">
              <li>
                 <a href="/midproject/index.html">Label</a>
@@ -304,12 +581,22 @@
              </li>
         </ul>
         
+
+
      </footer>
 
 
 
-    <script src="app.js"></script>
+    <script src="js/app.js"></script>
 
+    
+
+    <!-- 
+    rotating video
+    general about
+    testimonials sliding quotes
+    purpose of the class
+    footer -->
 
 </body>
 

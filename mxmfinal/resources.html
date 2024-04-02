@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+
+    <meta name="viewport" content= "width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="https://kit.fontawesome.com/cc5b01fdfb.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="icon" type="image/png" href="images/hh.png">
+
+    <meta name="keywords" content="multi-racial, blog">
+    
+    <link rel="stylesheet" 
+    href="css/swiper-bundle.min.css" />
+
+    <title> Mixed Messages </title>
+
+    <style>
+
+        .content {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            background-color: #363636;
+            height: 645px;
+            padding: 30px 50px;
+            flex-direction: column;
+            text-align: center;
+            z-index: 4;
+        
+        }
+
+        .islandcontainer {
+            color: #000;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            height: 350px;
+            width: 500px;
+            background-color: aqua;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+
+        .islandcontainer:hover {
+            cursor: grab;
+            height: 370px;
+            width: 550px;
+        }
+
+
+        .islandpicture-container {
+            overflow: hidden;
+            background-color: green;
+            height: 200px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.2s;
+        
+        }
+
+        /* use a picture that is close to the dimensions */
+        .islandpicture img {
+
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            z-index: 0;
+
+        }
+
+        .islandcontent-container {
+            overflow: hidden;
+            z-index: 1;
+            background-color: antiquewhite;
+            height: 179px;
+            border-top: 3px solid #000;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            transition: all 0.2s;
+        
+        }
+
+
+        .islandcontent-header {
+        
+            margin: -5px auto -25px auto;
+            font-size: 12px;
+            font-weight: 300;
+        }
+
+        .islandcontent-para {
+            height: 120px;
+            width: 500px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.3;
+        
+        }
+            
+
+        .islandsection {
+            width: 100%;
+            overflow-y: scroll;
+            background-color: #ffe88c;
+        }
+
+        @media screen and (max-width: 960px) {
+
+            .content {
+                height: 600px;
+            }
+
+        }
+
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="navbar-container">
+
+            <a href="/mxmfinal/index.html" id="navbar-logo"> 
+                <i class="fa-solid fa-mitten"></i> </a>
+
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span> <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <ul class="navbar-menu">
+
+                <li class="navbar-item">
+
+                    <div class="navbar-link-container" id="homelink">
+                         <a href="/mxmfinal/index.html"> Home </a> 
+                    </div>
+                    
+
+                </li>
+
+                <li class="navbar-item">
+
+                    <div class="navbar-link-container" id="desclink">
+                     <a href="/mxmfinal/discussions.html"> Discussions </a> 
+                    </div>
+
+                </li>
+
+                <li class="navbar-item">
+
+                    <div class="navbar-link-container" id="reslink">
+                         <a href="/mxmfinal/resources.html"> Resources </a> 
+                    </div>
+
+                </li>
+
+            </ul>
+
+        </div>     
+
+
+    </nav>
+     
+    <div id="popup-nav-mobile">
+
+        <ul class="mobile-list">
+
+            <li class="mobile-link"> <a href="/mxmfinal/index.html"> Home </a> </li>
+            <li class="mobile-link"> <a href="/mxmfinal/discussions.html"> Discussions </a> </li>
+            <li class="mobile-link"> <a href="/mxmfinal/resources.html"> Resources </a> </li>
+            
+
+        </ul>
+    </div>
+
+    <div class="content">
+
+        <div class="hbox">
+             <h1> The Purpose of This Course </h1>
+        </div>
+       
+        <div class="box">
+            <p> Race and Identity are confusing enough </p>
+        </div>
+
+    </div>
+
+    <div class="islandsection">
+
+    </div>
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html> 
