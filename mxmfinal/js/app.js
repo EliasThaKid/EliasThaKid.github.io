@@ -28,8 +28,8 @@ menu.addEventListener("click", toggleMobileMenu);
 
 function toggleMobileMenu()  {
     on = !on;
-    mobileMenu.style.height = on ? "350px" : "0px";
-    mobileMenu.style.padding = on ? "80px, 0px" : "0px";
+    mobileMenu.style.height = on ? "300px" : "0px";
+    // mobileMenu.style.padding = on ? "80px, 0px" : "0px";
 }
 
 
