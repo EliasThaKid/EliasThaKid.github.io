@@ -300,7 +300,7 @@
     }
 
     #navbar-logo {
-        margin-left: 100px;
+        margin-left: 60px;
     }
 
     .navbar__container {
@@ -368,12 +368,7 @@
     }
 
 
-    #navbar__logo {
-
-        padding-left: 25px;
-
-    }
-
+    
     .navbar__toggle  {
         height: 60px;
         width: 60px;
@@ -423,4 +418,12 @@
     #popup-nav-mobile {
         max-width: 400px;
     }
+
+
+    #navbar__logo {
+
+        margin-left: 30px;
+
+    }
+
 }
