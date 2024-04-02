@@ -154,7 +154,7 @@
         display: none;
         position: absolute;
         background-color: #969E7D;
-        width:240px;
+        width: 240px;
         overflow: scroll;
         padding: 10px;
         border-radius: 2px; 
@@ -415,8 +415,10 @@
 } 
 
 @media screen and (max-width: 400px) {
+
+
     #popup-nav-mobile {
-        max-width: 400px;
+        max-width: 390px;
     }
 
 
@@ -425,5 +427,21 @@
         margin-left: 30px;
 
     }
+
+    footer .menu li a {
+        font-size: 15px;
+    }
+
+    footer .social-links li a {
+
+        font-size: 1.5em;
+        margin: 10px 10px;
+        display: inline-block;
+        transition: 0.3s;
+        overflow: visible;
+        color: #fafafa;
+  
+      }
+
 
 }
